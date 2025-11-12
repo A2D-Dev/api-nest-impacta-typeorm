@@ -1,77 +1,108 @@
-# 🧩 API Nest Impacta – TypeORM Version
+<p align="center">
+  <img src="./banner.png" alt="Banner - API NestJS + TypeORM + MySQL - Impacta" width="100%">
+</p>
 
-> Projeto desenvolvido durante o **Milestone 6 – Faculdade Impacta**, com foco na migração do ORM **Prisma** para **TypeORM**, utilizando **NestJS**, **MySQL** e **JWT**.  
-> Versão aprimorada com boas práticas, autenticação, envio de e-mails e controle de acesso baseado em papéis (RBAC).
+# 🧠 API NestJS + TypeORM + MySQL - Impacta
 
----
-
-## 🚀 **Tecnologias Utilizadas**
-
-| Categoria | Tecnologia |
-|------------|-------------|
-| 🧱 Backend Framework | [NestJS](https://nestjs.com/) |
-| 🗄️ ORM | [TypeORM](https://typeorm.io/) |
-| 🐬 Banco de Dados | [MySQL](https://www.mysql.com/) |
-| 🔑 Autenticação | JWT (JSON Web Token) |
-| 📩 Envio de E-mails | Nodemailer + Ethereal |
-| 🔐 Segurança | Guards, Interceptors e Decorators |
-| 🧰 Utilitários | bcrypt, dotenv, class-validator |
+API desenvolvida com **NestJS**, **TypeORM** e **MySQL**, aplicando boas práticas de arquitetura, autenticação e segurança.  
+Projeto acadêmico da **Faculdade Impacta** — autoria **A2D-Dev (Anderson Dantas Dias)**.
 
 ---
 
-## 🧠 **Objetivo do Projeto**
+## 🚀 Tecnologias e Ferramentas
 
-- Demonstrar a **migração prática do Prisma para o TypeORM**.  
-- Aplicar conceitos de **injeção de dependência**, **entidades e repositórios**.  
-- Implementar **autenticação e autorização** usando **Guards e Roles**.  
-- Integrar o **envio de e-mails** com templates Pug.  
-- Testar rotas com **Insomnia** para validar respostas da API.
-
----
-
-## 📂 **Estrutura do Projeto**
-
-src/
-├── auth/ # Módulo de autenticação (login, reset, guards)
-├── user/ # CRUD de usuários e roles
-├── mailer/ # Envio de e-mails com TypeORM
-├── database/ # Configuração do TypeORM
-├── common/ # Decorators e interceptors
-├── main.ts # Ponto de entrada da aplicação
-└── app.module.ts # Módulo principal
-
+![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white)
+![TypeORM](https://img.shields.io/badge/TypeORM-ffb400?style=for-the-badge&logo=typeorm&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=jsonwebtokens)
+![Nodemailer](https://img.shields.io/badge/Nodemailer-007C89?style=for-the-badge&logo=maildotru&logoColor=white)
+![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white)
+![Prettier](https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=white)
 
 ---
 
-## ⚙️ **Como Executar Localmente**
+## 📂 Estrutura de Pastas (sugerida)
+
+📦 api-nest-impacta-typeorm
+┣ 📂 src
+┃ ┣ 📂 user
+┃ ┣ 📂 auth
+┃ ┣ 📂 database
+┃ ┣ 📂 mailer
+┃ ┣ 📂 common
+┃ ┗ main.ts
+┣ 📂 test
+┣ .env.example
+┣ package.json
+┣ README.md
+┗ tsconfig.json
+
+
+---
+
+## 📦 Instalação
 
 ```bash
-# 1️⃣ Clonar o repositório
 git clone https://github.com/A2D-Dev/api-nest-impacta-typeorm.git
-
-# 2️⃣ Instalar as dependências
+cd api-nest-impacta-typeorm
 npm install
 
-# 3️⃣ Configurar o arquivo .env
-# (crie com base no .env.example)
+⚙️ Executando
+# Desenvolvimento (hot-reload)
+npm run start:dev
+
+
+Aplicação em:
+👉 http://localhost:3000
+
+🌱 Variáveis de Ambiente
+
+Crie um arquivo .env com base no .env.example:
+
 DATABASE_HOST=localhost
+DATABASE_PORT=3306
 DATABASE_USER=root
-DATABASE_PASS=senha
-DATABASE_NAME=impacta_typeorm_db
-JWT_SECRET=seu_token_aqui
+DATABASE_PASS=123456
+DATABASE_NAME=impacta_typeorm
+JWT_SECRET=impacta2025
+EMAIL_USER=seu_email@ethereal.email
+EMAIL_PASS=sua_senha
 
-# 4️⃣ Executar o servidor
-npm run dev
+🔐 Funcionalidades Implementadas
 
+Autenticação com JWT (login, recuperação e redefinição de senha)
 
-## 🧪 Testes
-```bash
-npm run test
-```
+Controle de acesso (RBAC) com RoleGuard
 
-## 🧾 Licença
-Projeto sob [MIT](./LICENSE).
+Envio de e-mails (Nodemailer + Ethereal)
 
-## 👨‍💻 Autor
-**A2D-Dev (Anderson Dantas Dias)**  
+Uploads de arquivos (Multer)
+
+Limite de requisições (Throttler) para segurança
+
+Validação de dados com class-validator
+
+Banco de dados relacional com TypeORM
+
+🧩 Principais Scripts
+Comando	Descrição
+npm run start:dev	Inicia o servidor em modo desenvolvimento
+npm run typeorm migration:run	Executa as migrations pendentes
+npm run typeorm migration:generate -- name	Cria uma nova migration
+npm run test	Executa os testes automatizados
+🧠 Projeto Anterior (Base Prisma)
+
+🔗 A2D-Dev/api-nest-impacta
+
+Este projeto é a evolução direta do Milestone 5, agora migrando de Prisma para TypeORM.
+
+🧾 Licença
+
+Projeto sob MIT
+.
+
+👨‍💻 Autor
+
+A2D-Dev (Anderson Dantas Dias)
 GitHub: https://github.com/A2D-Dev
